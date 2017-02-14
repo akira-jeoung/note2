@@ -1,0 +1,492 @@
+<!-- 7232
+add a line to DYK
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\COMM\Views\UserNotifications\Display.cshtml
+	COMM/UserNotifications/Display
+-->
+				<div class="col-md-6">
+                    <div class="well well-small">
+                        <h5>@Html.Raw(BariumTranslate.Language._DidYouKnow) <a href="#" class="info" tabindex="-1" rel="tooltip" data-placement="right" title="@Html.SanitizeHTMLString(BariumTranslate.Language._ThisTooltipBoxWillHighlightAny)"><i class="fa fa-question-circle"></i></a></h5>
+                        <span class="did-you-know">@Html.Raw(BariumTranslate.Language._DidYouKnowThatDisablingTheNoti)
+                            <br /><br />@Html.Raw(BariumTranslate.Language._ThisPageAllowsYouToChooseWhich)
+                        </span>
+                    </div>
+                </div>
+				
+				
+<!--
+update DYK
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\WFMTM\Views\Postings\Create.cshtml
+-->
+				<div class="col-md-6">
+					<div class="well well-small">
+						<h5>@Html.Raw(BariumTranslate.Language._DidYouKnow) </h5>
+						<span class="did-you-know">@Html.Raw(BariumTranslate.Language._YouMustSelectALocationBeforeYo)</span>
+					</div>
+				</div>
+
+					
+<!-- 6875
+with js
+validation rule
+update tooltip
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\Directories\Views\Location\Create.cshtml
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\Directories\Views\Location\Edit.cshtml
+-->					
+				<div class="control-group" data-bind="visible: IsElectionMode">
+					<label class="control-label" for="locationcreate-Ward"><strong>@Html.Raw(BariumTranslate.Language._Ward)</strong> <a href="javascript:void(0)" class="info" tabindex="-1" data-usetooltip="tooltip" data-placement="right" title="@Html.SanitizeHTMLString(BariumTranslate.Language._TheWardId)"><i class="fa fa-question-circle"></i></a></label>
+					<div class="controls">
+						<input type="text" id="locationcreate-Ward" data-bind="value: WardId.formatted" placeholder="" class="col-md-3 requires-validation form-control FormattedStyleNumberInput" data-validation-min="0">
+					</div>
+				</div>
+				<div class="control-group" data-bind="visible: IsElectionMode">
+					<label class="control-label" for="locationcreate-SubDivision"><strong>@Html.Raw(BariumTranslate.Language._SubDivision2)</strong> <a href="javascript:void(0)" class="info" tabindex="-1" data-usetooltip="tooltip" data-placement="right" title="@Html.SanitizeHTMLString(BariumTranslate.Language._TheSubDivisionId)"><i class="fa fa-question-circle"></i></a></label>
+					<div class="controls">
+						<input type="text" id="locationcreate-SubDivision" data-bind="value: SubDivisionId.formatted" placeholder="" class="col-md-3 requires-validation form-control FormattedStyleNumberInput" data-validation-min="0">
+					</div>
+				</div>			
+
+<!--
+with js
+make legend button and modal
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\COMM\Views\Meeting\List.cshtml
+-->		
+<style type="text/css">
+    .RegisteredTrainingColor {
+        background-color: #008000;
+    }
+    .WaitlistedTrainingColor {
+        background-color: #D2B48C;
+    }
+</style>
+
+	<div class="row">
+		<div class="col-md-8 pull-right">
+			<div class="pull-right">
+				<button type="button" data-bind="click: function() { LoadLegendModal() }" class="btn btn-sm btn-info">@Html.Raw(BariumTranslate.Language._Legend)</button>
+				<button type="button" class="btn btn-sm btn-inverse" data-bind="click: Cancel">@Html.Raw(BariumTranslate.Language._Close)</button>
+			</div>
+		</div>
+	</div>
+	
+	<div id="resisterdEvent-legend-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="legendModalLabel" aria-hidden="true" style="z-index: 1100;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+					<h4 id="legendModalLabel" class="modal-title">Legend</h4>
+				</div>
+				<div class="modal-body">
+
+					<div>
+						<div class="row">
+							<div class="col-md-12">
+								<ul class="list-unstyled">
+									<li><h3><span class="label RegisteredTrainingColor">@Html.Raw(BariumTranslate.Language._MyMeetings)</span></h3></li>
+									<li><h3><span class="label WaitlistedTrainingColor">@Html.Raw(BariumTranslate.Language._WaitlistedTrainingEvent)</span></h3></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer" style="min-height: 60px; max-height: 60px;">
+					<div class="pull-right">
+						<button class="btn btn-inverse" data-dismiss="modal" aria-hidden="true">@Html.Raw(BariumTranslate.Language._Close)</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+
+
+<!-- 7123
+with js
+Improve message on WFS: input the filter name to message
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\Scheduling\Views\ShiftChangeHistory\List.cshtml
+-->			
+		<div class="alert alert-info"  data-bind="visible: Items().length == 0" style="display: none;">
+			<div data-bind="visible: SelectedFilter() == 0">
+				@Html.Raw(BariumTranslate.Language._ThereAreNoItemsThatYouHaveAvai)
+			</div>
+			<div data-bind="visible: SelectedFilter() != 0">
+				@Html.Raw(BariumTranslate.Language._ThereAreNo)
+				<strong data-bind="text: GetNameBySelectedFilter()"></strong>
+				@Html.Raw(BariumTranslate.Language._ThatYouHaveAvailableToSee)
+			</div>               
+		</div>						
+
+<!--  
+Improve message on WFS: input the filter name to message
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\WFMTM\Views\Application\Display.cshtml
+-->			
+			<div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="control-group">
+                            <label class="control-label">
+                                <strong>@Html.Raw(BariumTranslate.Language._Note)</strong>                               
+                            </label>
+                            <div class="controls">
+                                <textarea class="col-md-12 form-control" rows="10" data-bind="value: AddNotes"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+<div id="interview-cancelnotes-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ModalLabel5" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-1"></i></button>
+                <h4 id="H1" class="modal-title">@Html.Raw(BariumTranslate.Language._InterviewCancelNote)</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="control-group">
+                            <label class="control-label">
+                                <strong>@Html.Raw(BariumTranslate.Language._Note)</strong>
+                                <span class="barium-required">&nbsp;</span>
+                                <span class="label label-warning barium-required" style="font-size: 0.7em;">Required</span>
+                            </label>
+                            <div class="controls">
+                                <textarea class="col-md-12 requires-validation form-control" rows="10" data-bind="value: AddNotes" data-validation-required="true"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success btn-sm" data-bind="click: Save">@Html.Raw(BariumTranslate.Language._CancelInterview)</button>
+                <button class="btn btn-inverse btn-sm" data-dismiss="modal" aria-hidden="true">@Html.Raw(BariumTranslate.Language._Close)</button>
+            </div>
+        </div>
+    </div>
+</div>
+			
+			
+<!--
+Improve DYK message
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\Reporting\Views\StandardReports\EmploymentStatus.cshtml
+-->
+			<div class="controls">
+				<ul class="unstyled" data-bind="foreach: AvailableEmploymentStatus" style="height: 95px; border: 1px solid grey; overflow-y: auto; padding: 5px;">
+					<li><input type="checkbox" data-bind="checked: IsSelected" style="margin-bottom: 8px;" />&nbsp;&nbsp;<span data-bind="text: Name"></span></li>
+				</ul>
+				<span class="help-block">If no statuses are selected, then all statuses will be selected.</span>
+			</div>
+			
+
+<!-- 7153
+add required tag to edit page
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\WFMTM\Views\Postings\Edit.cshtml
+-->			
+	<select id="template-IsRequired" data-bind="booleanValue: ResumeRequiredForApplication" class="col-md-3 requires-validation form-control" data-validation-required="true">							
+									
+									<div class="control-group">
+                                        <label class="control-label">
+                                            <strong>@Html.Raw(BariumTranslate.Language._ResumeRequiredForApplication2)</strong> 
+											<a title="@Html.SanitizeHTMLString(BariumTranslate.Language._IsTheResumeRequiredWhenSubmitt)" href="javascript:void(0)" class="info" tabindex="-1" data-usetooltip="tooltip" data-placement="right"><i class="fa fa-question-circle"></i></a>
+                                        </label>
+                                        <div class="controls">
+                                            <select id="template-IsRequired" data-bind="booleanValue: ResumeRequiredForApplication" class="col-md-3 requires-validation form-control" data-validation-required="true">
+                                                <option value="false">@Html.Raw(BariumTranslate.Language._No)
+                                                <option value="true">@Html.Raw(BariumTranslate.Language._Yes)
+                                            </select>
+                                        </div>
+                                    </div>
+									
+									
+									
+			
+<!-- 7183
+using style, make scroll in the table
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\Admin\Views\Role\List.cshtml
+using CSS 
+	width is not absolute value, but just recommended value. If you want to fix the width, give min-width and max-width both.
+-->			
+ 
+
+		.fixedposition1 { 
+        min-width: 45px;
+        max-width: 45px;
+        margin-left:0;
+        }
+
+        .fixedposition2 {        
+        min-width:200px;  
+        max-width:200px;       
+        }
+
+        .fixedposition3 {
+        min-width: 15px;  
+        max-width: 15px; 
+        }
+
+        .fixedposition4 {
+            min-width: 120px;
+            max-width: 120px; 
+        }
+                      
+        table.fixedscroll {
+        }
+
+        table.fixedscroll tbody, table.fixedscroll thead { 
+            display: block;             
+        }        
+        
+        table.fixedscroll tbody {
+            height: 240px;
+            overflow-y: auto;
+            overflow-x:hidden;
+            
+        }     
+
+		
+		<!-- CUSTOM PERMISSIONS TAB -->
+
+              <div class="row" data-bind="visible: PermissionsLeftColumnVisibility() && PermissionsTab == SelectedTab()" style="display: none;">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <h5>@Html.Raw(BariumTranslate.Language._Modules)</h5>
+                                <select class="input-xlarge form-control" data-bind="options: AvailableModules, optionsCaption: $root.SelectMessage, optionsText: 'Name', value: SelectedModule"></select>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>@Html.Raw(BariumTranslate.Language._Components)</h5>
+                                <select class="input-xlarge form-control" data-bind="options: AvailableComponents, optionsCaption: $root.SelectMessage, optionsText: 'Name', value: SelectedComponent, disable: SelectedModule() == undefined"></select>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>@Html.Raw(BariumTranslate.Language._Categories)</h5>
+                                <select class="input-xlarge form-control" data-bind="options: AvailableCategories, optionsCaption: $root.SelectMessage, optionsText: 'Name', value: SelectedCategory, disable: (SelectedModule() == undefined || SelectedComponent() == undefined)"></select>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="pull-right">
+                                    <button type="button" class="btn btn-success btn-sm" data-bind="click: $root.Save, visible: SelectedCategory()" onclick="window.scrollTo(0,0)">
+                                        @Html.Raw(BariumTranslate.Language._Update)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- -->
+                            <div class="tab-content" data-bind="visible: SelectedCategory() != undefined && Roles() != null && Role() != null">
+                                <div class="col-md-12" style="overflow-x: auto; margin:0; width: 100%">
+                                    <table class="table table-hover fixedscroll">
+                                        <thead data-bind="with: Role">
+                                            <tr>
+                                                <th class="fixedposition1">
+                                                </th>
+                                                <th class="fixedposition2">
+                                                    @Html.Raw(BariumTranslate.Language._CustomRoles)
+                                                </th>
+                                                <th class="fixedposition3"></th>
+                                                <!-- ko foreach: Permissions -->
+                                                <th class="fixedposition4">
+                                                    <span data-bind="text: Name"></span><br>
+                                                    <input type="checkbox" data-bind="checked: AllRolesChecked" value="0">
+                                                </th>
+                                                <!-- /ko -->
+                                            </tr>
+                                        </thead>
+                                        <tbody data-bind="foreach: Roles">
+                                            <tr>
+                                                <td class="fixedposition1">
+                                                    <input type="checkbox" data-bind="checked: AllPermissionsChecked" value="0">
+                                                </td>
+                                                <td class="fixedposition2">
+                                                    <span data-bind="text: $parent.Test"></span><span data-bind="text: Name"></span>
+                                                </td>
+                                                <td class="fixedposition3"></td>
+                                                <!-- ko foreach: Permissions -->
+                                                <td class="fixedposition4">
+                                                    <input type="checkbox" class="checkboxPermission" data-bind="checked: IsChecked">
+                                                </td>
+                                                <!-- /ko -->
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-content" data-bind="visible: SelectedCategory() == undefined" style="display: none;">
+                                <div class="alert alert-info">
+                                    <strong>@Html.Raw(BariumTranslate.Language._Info)</strong>
+                                    <span>@Html.Raw(BariumTranslate.Language._PleaseSelectACategoryWhosePerm)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			
+			
+<!-- 7252
+using bootstrap alert, show message for empty list
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\WFMTM\Views\InterviewSchedule\List.cshtml
+http://getbootstrap.com/components/#alerts
+-->				
+			
+			<div class="alert alert-info" data-bind="visible: Items().length == 0" style="display: none;">
+				<button type="button" class="close" data-dismiss="alert">
+					<i class="fa fa-times fa-1"></i>
+				</button>
+				<strong>@Html.Raw(BariumTranslate.Language._Info)</strong>
+				<div>
+					<span>@Html.Raw(BariumTranslate.Language._TheListIsEmptyThereAreNoItemsT)</span>
+					<br>
+				</div>
+			</div>
+			
+		
+
+<!-- 6874
+chnage create button type
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\WFMLookups\Views\TrainingTypes\List.cshtml
+	/WFM/Lookups/TrainingTypes/List
+-->		
+
+
+		<div class="pull-right tool-bar-buttons">
+			<div class="btn-group">
+				<a class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown" href="#">@Html.Raw(BariumTranslate.Language._Create) <span class="caret"></span></a>
+				<ul class="dropdown-menu dropdown-menu-right">
+					<li><a tabindex="-1" class="create-font" href="#" data-bind="click: Create, visible: CanCreateEntity" style="display: none;">@Html.Raw(BariumTranslate.Language._CreateTrainingType)</a></li>
+					<li><a tabindex="-1" class="create-font" href="#" data-bind="click: CreateClassification, visible: CanCreateEntity" style="display: none;">@Html.Raw(BariumTranslate.Language._CreateTrainingClassification)</a></li>
+				</ul>
+			</div>
+			<button type="button" class="btn btn-sm btn-inverse" data-bind="click: Cancel">@Html.Raw(BariumTranslate.Language._Close)</button>
+		</div>
+
+		<!-- before change -->
+			<div class="pull-right tool-bar-buttons btn-group">
+				<button class="btn btn-sm btn-success" data-bind="click: Create, visible: CanCreateEntity" style="display: none;">@Html.Raw(BariumTranslate.Language._Create)</button>
+				<button class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown">
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu pull-right">
+					<li><a tabindex="-1" class="create-font" href="#" data-bind="click: Create, visible: CanCreateEntity" style="display: none;">@Html.Raw(BariumTranslate.Language._CreateTrainingType)</a></li>
+					<li><a tabindex="-1" class="create-font" href="#" data-bind="click: CreateClassification, visible: CanCreateEntity" style="display: none;">@Html.Raw(BariumTranslate.Language._CreateTrainingClassification)</a></li>
+				</ul>
+				<button type="button" class="btn btn-sm btn-inverse" data-bind="click: Cancel">@Html.Raw(BariumTranslate.Language._Close)</button>
+			</div>
+
+
+
+<!-- 6723
+Add a "Did you know" 
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\Admin\Views\Holidays\Create.cshtml
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\Admin\Views\Holidays\Edit.cshtml
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\Admin\Views\Holidays\Display.cshtml
+	/Admin/Holidays/Create
+	/Admin/Holidays/Edit
+	/Admin/Holidays/Display
+	reference: 	COMM/UserNotifications/Display  	<- DYK with tool-tip
+				/Scheduling/Schedules/Create		<- DYK without tool-tip
+-->					
+			
+		<div class="col-md-6">
+			<div class="well well-small">
+				<h5>@Html.Raw(BariumTranslate.Language._DidYouKnow) </h5>
+				<span class="did-you-know">@Html.Raw(BariumTranslate.Language._HolidaysDoNotCarryOverFromYear)</span>
+			</div>
+		</div>
+
+
+<!-- 7068
+different view for mobile
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Content\css\Site.css					: css for whole site
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Views\Shared\_Layout.cshtml			: main page html
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Views\Shared\_HelpLink.cshtml		: helplink html
+C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Views\Shared\__PartialLogin.cshtml	: login dropdownmenu html
+-->		
+
+<!-- Responsive Web Design - Media Query  (The Viewport)
+-->
+	@media only screen and (max-width: 768px) {
+		.mobile-off {
+			display: none;
+		}
+	}
+
+	@media only screen and (min-width: 769px) {
+		.mobile-on {
+			display: none;
+		}
+	}
+	
+	
+	
+	
+<!-- main page
+-->
+		@Html.Partial("_HelpLink")				<!--   C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Views\Shared\_HelpLink.cshtml  -->
+		<!--   @Html.Partial("something")  :  replace this part with something.cshtml -->
+		
+				@if (string.IsNullOrWhiteSpace(ViewBag.Branding.HelpUrl) == false)
+				{
+					<li>
+						<a href="@ViewBag.Branding.HelpUrl" target="_blank" class="f-s-14">
+							<span class="hidden-xs">
+								@BariumTranslate.Language._Help
+								<i class="fa fa-question-circle"></i>
+							</span>
+						</a>
+					</li>
+				}
+		
+		
+		@if (User.IsInRole("Employee Kudos Create"))
+		{
+			<li>
+				<a dir="@ViewBag.Direction" id="give-kudos" href="javascript:;" class="f-s-14">
+					<span class="hidden-xs">@BariumTranslate.Language._GiveKudos test</span>
+					<i class="fa fa-thumbs-o-up"></i>
+				</a>
+			</li>
+		}
+
+		@if (User.IsInRole("COMM Announcement Read"))
+		{
+			<li id="myactivities-announcements">
+				<a href="@Url.Action("List", "Announcements", new { area = "COMM" })" data-container="body" data-usetooltip="tooltip" data-placement="bottom" title="@BariumTranslate.Language._ClickHereToViewAnnouncements">
+					<i class="fa fa-bullhorn"></i>
+					<span class="label label-theme m-l-5">@ViewBag.Notification.AnnouncementCount </span>
+				</a>
+			</li>
+		}
+
+		@if (User.IsInRole("COMM WaveMail Read Message"))
+		{
+			<li id="myactivities-mail">
+				<a href="@Url.Action("List", "WaveMail", new { area = "COMM" })" data-container="body" data-usetooltip="tooltip" data-placement="bottom" title="@BariumTranslate.Language._ClickHereToViewUnreadMessages">
+					<i class="fa fa-envelope"></i>
+					<span class="label label-theme m-l-5">@ViewBag.Notification.MailCount </span>
+				</a>
+			</li>
+		}
+
+		@if (User.IsInRole("COMM Tasks Read"))
+		{
+			<li id="myactivities-tasks">
+				<a href="@Url.Action("List", "Tasks", new { area = "COMMTasks" })" data-container="body" data-usetooltip="tooltip" data-placement="bottom" title="@BariumTranslate.Language._ClickHereToReviewYourAlerts">
+					<i class="fa fa-tasks"></i>
+					<span class="label label-theme m-l-5">@ViewBag.Notification.TaskCount </span>
+				</a>
+			</li>
+		}
+
+		@Html.Partial("_PartialLogin")<!--   C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Views\Shared\__PartialLogin.cshtml  -->
+		<!--   @Html.Partial("something")  :  replace this part with something.cshtml -->
+			<li class="divider visible-xs"></li>
+            <li class="visible-xs">
+                <a href="@ViewBag.Branding.HelpUrl" target="_blank">
+                    @BariumTranslate.Language._Help
+                    <i class="fa fa-question-circle"></i>
+                </a>
+            </li>  
+			

@@ -1,0 +1,52 @@
+=======================================================================================================================================
+Process about using Git to get and update source codes
+
+written by B(youngG)ill Jeoung
+16, Jan. 2017
+=======================================================================================================================================/
+
+	1. connect to Visual Studio online server
+		https://akiradevwavelength.visualstudio.com/_git/Barium
+		(to do this, we need a account of visualstudio.com, which might be made as "username@akirasystems.com")
+	2. connect to SharePoint
+		we have 2 url addresses for SharePoint, one is for Central Administration, the other is for Barium.
+			(need to make sure)In my opinion, using connection with Central Administration we can create a new account for connection to SharePoint, and using new individual account, we can connect to the SharePoint for our solution.
+	3. using Git, getting the source codes (from https://akirawavelength.visualstudio.com/_git/Barium)
+		- install 'TortoiseGit'
+		- copy the url address of the source from 'https://akirawavelength.visualstudio.com/_git/Barium', clicking 'Clone'
+		- at the 'C:\Git', 		
+			. right click, and select 'Git Clone...'
+			. paste url address of the source to URL:
+			. make sure the Directory: is your local directory which you want like 'C:\Git\Barium'
+		(if you complete these things, that means you have the last version of the source codes.)
+	4. create new branch using TortoiseGit
+		- This can  
+			make sure what you are doing and have done.
+			prevent to update your changes to 'master' on the server. 
+		- recommended convention rules is initial-#ofTicket(-description) like "bj-7545-createDYK"
+		- recommended to check the check-box of 'Switch to new branch' (then you don't need to switch again because TortoiseGit switch your branch automatically)
+	5. make changes in source codes
+		- Visual Studio Solution (Run as administrator)
+			1. for UI: Barium.Boost.sin  	(C:\Git\Barium\Source\Barium.Boost)
+			2. for Backend: Barium.sln		(C:\Git\Barium\Source\Barium)
+				input the URL of SharePoint to make sure the connection with SharePoint like "http://akiradev-017:13377/"
+					Barium.Web.Core (SharePoint)
+					Barium.Web.Definitions (SharePoint)
+					ClarityDashboard (SharePoint)
+	6. commit the changes
+		- after changing, you can see the red '!' in your file explore
+		- right click on your folder, select 'Git commit -> branch name'
+			available and necessary to add message for description about changes, and this message will be re-used when you ask to 
+	7. push the changes to server
+		make sure 
+			- the space in 'Remote:', the name of branch in 'Remote:' would be same with your 'Local' branch automatically.
+			- the name of branch in 'Local:'
+	8. Pull Request
+		you can 
+			- see the result of your pushing on the menu of 'Branches' on akiradevwavelength.visualstudio.com
+			- make pull request to update the change to source
+				when you ask pull request, you can modify your orginal description about the changes
+	9. Review changes by other developers.
+	10. apply the change
+	
+	

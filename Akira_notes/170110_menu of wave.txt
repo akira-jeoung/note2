@@ -1,0 +1,63 @@
+Dashboard									
+									
+Corporate Document									
+									
+Add New Employee									
+									
+Policies									
+									
+Directories:		for setting up and inputting basic data, but to create new employee, must use 'Add New Employees'.
+	Departments
+	Employees		(for searching employee)
+	Locations
+									
+									
+Talent Manager		for hiring()	
+	Dashboard/Tiles
+	Applications
+	Interview Schedules
+	Postings
+	Questionnaries
+									
+Workforce Manager									
+									
+Workforce Scheduler									
+	Schedule Bulider								
+	Schedule Rule					
+									
+Communications									
+	Dashboard / Tiles								
+	Announcements								
+	Calendar								
+	Colleagues								
+	Letters								
+	Training Events Setup			creating a new training schedules that have training level					
+	Training Events								
+	Training Events Attendance								
+	Surveys								
+	Tasks								
+	WaveMail								
+Accident Reports									
+									
+Reports									
+									
+Administration									
+	Bulk Uploads								
+	Communications								
+	Corporate Admin								
+		Accident Reporting							
+		Account Management							
+		Holidays / Blackouts							
+		Location Types							
+		Position & Payment	Positions	making the positions in the department (Individual Department Positions)					
+			Payment Adjustments						
+		Regional Settings							
+		Roles							
+		Site Configuration							
+		Site Branding							
+	Hiring Workflow Setup								
+	Policy								
+	Talent Manager								
+	Workforce Manager								
+	Workforce Scheduler								
+									

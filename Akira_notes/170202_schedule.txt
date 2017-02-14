@@ -1,0 +1,122 @@
+========================================================
+17021
+
+
+========================================================
+170214
+
+	# 7312 make link alive after getting error message from server
+		the link to display that the applicant's name has disappears after getting a exception message from server.
+		html code has visible option depends on the length of error array.
+		I could understand why it depends on error array length if user can open a new window for display for the applicant or not.
+		So I remove the condition that makes link depend on error array length.
+		
+
+	# 7298 change success message after creating custom rule
+		/Admin/Role/Create
+		C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\Admin\Views\Role
+		I just chnage the message of ajax call done
+		
+	# 7312
+		/WFM/TM/Application/List
+		
+
+========================================================
+170213
+
+	# 7311 validate the relationship between the start date, internal expiry date, and end date in posting.
+		add validating rule for start date, internal expiry date, and end date into the adding and updating rules in posting Provisioners.cs
+		I could understand 
+			1. where I can find the variables' name : genesis
+			2. how to use general exception method
+
+========================================================
+170210
+
+	# 7121 remove white space when creating/editting
+		adding method Trim() to server module to editting accessment questionnarie / interview questionnarie
+		
+
+
+========================================================
+170209
+
+	# 7287 add validation module to creating/editting position/position template in order to make sure if user checks at least more one role.
+		in javascript, using foreach, I made a process to count how many checkbox user checked.
+		I could understand how to use knockout foreach for array
+		in order to validate if user have selected at least one role,
+		I made the counter for the selected roles
+		and I using for-each loop.
+		To do so, I needed to understand Knockout array and for-each loop.
+
+
+========================================================
+170208
+
+	# 7068 make the header and login dropdown menu different between mobile and desktop using Media Query in CSS (Cascading Style Sheets)
+		make 2 kinds of style in the file 'Site.css'
+		- mobile-off: make property hidden when mobile status
+		- mobile-on: make property appear only on mobile status
+		
+		The requirement of my ticket is optimized display on the mobile device.
+		I needed to make 2 kinds of style, one can make some property hidden, and the other can make some properties shown only on the mobile mode.
+		I made mobile-off and mobile-on in the file 'site.css' by using RWD(Responsive Web Design) Media Queries
+
+
+========================================================
+170207 
+
+	# 6515 change Oh-snap message from previsioner.cs that is like event listener for Share Point	
+	
+	
+	# 6475 remove incorrect Oh-snap message appearing and disappearing by changing the initial value of boolian to true
+
+========================================================
+170206
+
+	# 6723 add Did you know
+	
+	# 7868 adjust layout for mobile version
+
+
+========================================================
+170203
+	
+	# 6874 QA faild
+		in this ticket, I've already changed the button style, but when click the button, the options are cut off on the right-hand side of the page
+		
+	# 6829
+		we don't use the term 'Shift drop', so need to change 'Shift drop' to 'shift post'
+		
+		'Shift drop'
+		
+		partial Nav bar						: Administration\Workforce Scheduler\Drop Reason
+		
+		Scheduling/SchedulingRule/Edit 		: Did you Know
+		Scheduling/SchedulingRule/Create	: Did you Know
+		Scheduling/SchedulingRule/Display	: tooltip of 'Notify Of Last Minute Changes'
+		
+		Scheduling/ShiftChangeHistory/List	: Drops
+		
+		Scheduling/Lookups/DropReason/List	: title
+		Scheduling/Lookups/DropReason/Create : title, tooltip of 'Name', and 'Ordinal'
+		Scheduling/Lookups/DropReason/Edit	: title, tooltip of 'Name', and 'Ordinal'
+		
+		
+		
+		C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Views\Shared\_PartialNavbar.cshtml
+			Barium.Boost\Barium.Boost.Web\Views\Shared\Toolbar\_PartialNavbar.cshtml
+
+========================================================
+170202
+
+	# 7286
+		sort dropdown list using knockout array sort()
+		I could see a good example how to use knockout array function.
+	# 7232 QA faild
+		just changed the message in the 'Did you know'
+		
+
+		
+		
+		

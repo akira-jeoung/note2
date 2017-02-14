@@ -1,0 +1,34 @@
+- weekly time sheet
+	for co-op, I need to write my weekly time sheet.
+	just one project, daily record what I did hourly.
+	
+- briefing for Wavelength from Kip
+	. Add employee  
+		>>Add New Employee
+			1. Adding and input details
+			2. Hiring Workflow (Tap)
+				Basic Steps: Edit Employee Details(pass) -> Create Employment Contract() -> Finalize Empoyee (Activate now and send email)
+		
+	. Deptartment and Location
+		>> Position
+	. set up training
+	. Persanal details
+	. Permission
+	. Schedule Builder
+	. Training Event
+	. Reports
+	
+	
+- developer scrum
+	every 10:30 am, every developer has a meeting for sharing each task and plan
+
+- file: Barium.Library\Modules\Workforce\Employees\Provisioners.cs
+ 
+
+			
+		
+		
+			
+
+
+

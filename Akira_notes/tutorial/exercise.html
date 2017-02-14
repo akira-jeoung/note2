@@ -1,0 +1,27 @@
+
+<!-- data-bind text -->
+
+	<p>First name: <strong data-bind="text: firstName"></strong></p>
+	<p>Last name: <strong data-bind="text: lastName"></strong></p>
+
+
+
+<!-- data-bind input value -->
+
+	<p>First name: <input data-bind="value: firstName" /></p>
+	<p>Last name: <input data-bind="value: lastName" /></p>
+	
+	
+<!-- computed properties to conbine or convert multiple observable -->
+
+	<p>First name: <input data-bind="value: firstName" /></p>
+	<p>Last name: <input data-bind="value: lastName" /></p>
+
+	<p>Full name: <strong data-bind="text: fullName"></strong></p>
+	
+<!-- // capitalize the value of property -->
+	<p>First name: <input data-bind="value: firstName" /></p>
+	<p>Last name: <input data-bind="value: lastName" /></p>
+
+	<p>Full name: <strong data-bind="text: fullName"></strong></p>
+	<button data-bind="click: capitalizeLastName">Go caps</button>
