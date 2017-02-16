@@ -1,8 +1,25 @@
 ========================================================
+17021
+
+
+========================================================
+17021
+
+========================================================
+170216
+	# 7068 QA faild
+		add tooltip for 'Give Kudos'
+
+
+========================================================
 170215
 
 	# 7323	add a new permission WFS Election Punch Clock using Migration	
 		Barium\Barium.Library\Migration\_20170215122210_WFSElectionPunchClock
+		When I test a ticket for QA that is for validating employee's phone number with type, I could find the menu 'Election Day Attendance', 
+		because I did not have the permission, "WFS Election Punch Clock" and I could find there was not that permission.
+		So, I needed to add a new permission using Migration even though I don't know why.
+		Anyway, thanks to Shane's help, I could do.
 
 
 ========================================================

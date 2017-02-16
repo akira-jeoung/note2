@@ -438,14 +438,14 @@ C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Views\Shared\__PartialLogin.c
 						</a>
 					</li>
 				}
-		
+				
 		
 		@if (User.IsInRole("Employee Kudos Create"))
 		{
 			<li>
-				<a dir="@ViewBag.Direction" id="give-kudos" href="javascript:;" class="f-s-14">
-					<span class="hidden-xs">@BariumTranslate.Language._GiveKudos test</span>
+				<a dir="@ViewBag.Direction" id="give-kudos" href="javascript:;" class="f-s-14" data-container="body" data-usetooltip="tooltip" data-placement="bottom" title="@BariumTranslate.Language._ClickHereToGiveKudos">
 					<i class="fa fa-thumbs-o-up"></i>
+					<span class="hidden-xs">@BariumTranslate.Language._GiveKudos</span>
 				</a>
 			</li>
 		}
