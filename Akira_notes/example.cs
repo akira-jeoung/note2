@@ -230,3 +230,33 @@ C:\Git\Barium\Source\Barium\Barium.Library.Core\Modules\Workforce\TalentManager\
 					.IsGreaterThan<MeetingsFieldRegStartDate>(MeetingsFieldRegStartDate.Instance)
 					.IsLessThan<MeetingsFieldStartDate>(MeetingsFieldStartDate.Instance);
 			}
+			
+			
+			
+			
+/*	7311
+add a new permission WFS Election Punch Clock using Migration	
+		Barium\Barium.Library\Migration\_20170215122210_WFSElectionPunchClock.cs
+*/			
+
+   [MigrationVersion(Version = "https://redmine.akirawavelength.com/issues/7323")] // ticket #
+    public class _20170215122210_WFSElectionPunchClock : MigrationGenesisProvisioner<thisprovisioner>, IMigration
+    {
+        protected override void Upgrade()
+        {
+            // new permissions 
+            this.AddRule(new AddPermissionsWFSElectionPunchClock(this));
+        }
+    }
+
+    public class AddPermissionsWFSElectionPunchClock : AddPermissionBaseRule<thisprovisioner> // base function 
+    {
+        public AddPermissionsWFSElectionPunchClock(thisprovisioner p)
+            : base(p, Core.Resources.Core.Modules.Core, Core.Resources.Core.Components.Locations)
+        {
+            this.Permissions.Add(new PermissionMetaData(PermissionNames.WFSElectionPunchClock, PermissionProfileType.Profile, "Scheduling", "Allows user to access the Election-Day Unassigned Punch Clock."));
+			// name, type, group, description
+			// Barium\Barium.Library\Modules\Scheduling\Setup\Rules\PermissionsRule.cs
+        }
+    }
+

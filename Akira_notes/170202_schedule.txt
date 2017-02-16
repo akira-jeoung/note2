@@ -1,11 +1,15 @@
 ========================================================
-17021
+170215
+
+	# 7323	add a new permission WFS Election Punch Clock using Migration	
+		Barium\Barium.Library\Migration\_20170215122210_WFSElectionPunchClock
 
 
 ========================================================
 170214
 
 	# 7312 make link alive after getting error message from server
+		/WFM/TM/Application/List
 		the link to display that the applicant's name has disappears after getting a exception message from server.
 		html code has visible option depends on the length of error array.
 		I could understand why it depends on error array length if user can open a new window for display for the applicant or not.
@@ -16,10 +20,7 @@
 		/Admin/Role/Create
 		C:\Git\Barium\Source\Barium.Boost\Barium.Boost.Web\Areas\Admin\Views\Role
 		I just chnage the message of ajax call done
-		
-	# 7312
-		/WFM/TM/Application/List
-		
+				
 
 ========================================================
 170213
